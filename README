@@ -1,0 +1,20 @@
+Other People's Code is handy for making directory hard-links in OSX.
+Shamelessly cribbed from StackOverflow:
+http://stackoverflow.com/questions/1432540 
+
+Usage (assuming ~/bin is in your PATH):
+
+gcc -o hln hln.c
+gcc -o hunlink hunlink.c
+mv hln ~/bin
+mv hunlink ~/bin
+
+hln /some/dir ~/linked_dir
+
+Now your computer thinks those are exactly the same directory! Cool.
+But don't delete linked_dir or it'll also delete /some/dir.
+That's what hunlink is for:
+
+hunlink ~/linked_dir
+
+Neato.
